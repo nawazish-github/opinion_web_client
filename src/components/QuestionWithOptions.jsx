@@ -10,16 +10,18 @@ function QuestionWithOptions() {
         options: []
     };
 
+    const date = new Date().toISOString().split('T')[0];
     const [data, setData] = useState(initState);
 
     useEffect(() => {
-        console.log('fetching questions for the day!');
+        console.log('fetching questions for the day: ', date);
 
-        fetch("http://localhost:8080/question/2021-09-18")
+        const URL = `http://localhost:8080/question/${date}`;
+        fetch(URL)
             .then(resp => resp.json())
             .then(data => setData(data))
             .catch(err => console.log(err))
-    }, []);
+    }, [date]);
 
     function onClickHandler() {
         const options = {
