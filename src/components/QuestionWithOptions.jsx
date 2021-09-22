@@ -23,15 +23,18 @@ function QuestionWithOptions() {
             .catch(err => console.log(err))
     }, [date]);
 
-    function onClickHandler() {
+    function onClickHandler(key) {
+        console.log('option key: ', key);
+        const dateTime = new Date().toISOString();
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                qid: "3",
-                oid: "1",
+                qid: data.question.qid,
+                oid: key,
+                date_time: dateTime,
             }),
         };
 
@@ -49,6 +52,7 @@ function QuestionWithOptions() {
                     key={opt.oid}
                     option={opt.option_prompt}
                     onClickHandler={onClickHandler}
+                    id={opt.oid}
                 />)}
         </div>
     );

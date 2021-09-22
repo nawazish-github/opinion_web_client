@@ -13,10 +13,12 @@ function Option(props) {
     return (
         <div>
             <input 
-                className="option" 
+                className="option"
+                key={props.id}
+                id="98"
                 type="button" 
                 value={props.option} 
-                onClick={()=>props.onClickHandler(props.option)}
+                onClick={()=>props.onClickHandler(props.id)}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 style={{backgroundColor: isOver && "grey"}}
