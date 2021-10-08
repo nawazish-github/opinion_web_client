@@ -41,3 +41,12 @@ h1 {
   margin-top: 50px;
   font-family: 'Merriweather', serif;
 }
+
+.survey {
+  width: 500px;
+  display: inline-block;
+}
+
+.App {
+  align-content: center;
+}

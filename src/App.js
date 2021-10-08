@@ -1,5 +1,6 @@
 import './App.css';
 import QuestionWithOptions from "./components/QuestionWithOptions";
+import QuestionOnStats from "./components/QuestionOnStats";
 
 function App() {
     return (
@@ -8,7 +9,9 @@ function App() {
                 <h1>Opinion</h1>
                 <p>because your opinion matters...</p>
             </div>
-            <QuestionWithOptions />
+            <div className="survey">
+                <QuestionOnStats/>
+            </div>
             <div className="footer-container"></div>
         </div>
     );
